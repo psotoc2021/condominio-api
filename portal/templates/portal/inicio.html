@@ -1,0 +1,20 @@
+{% extends "portal/base.html" %}
+
+{% block content %}
+<section class="bienvenida">
+    <h2>Bienvenido, {{ user.first_name|default:user.username }}</h2>
+    <p>Portal privado de información y documentación del condominio.</p>
+
+    <div class="opciones">
+        <a class="tarjeta" href="{% url 'usuarios' %}">
+            <h3>Usuarios</h3>
+            <p>Administración de propietarios y usuarios.</p>
+        </a>
+
+        <a class="tarjeta" href="{% url 'documentos' %}">
+            <h3>Documentos</h3>
+            <p>Consulta de actas, estados de cuenta y comunicados.</p>
+        </a>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "portal/base.html" %}
+
+{% block content %}
+<h2>Eliminar usuario</h2>
+
+<p>¿Se confirma la eliminación del usuario <strong>{{ usuario.username }}</strong>?</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Eliminar</button>
+    <a href="{% url 'usuarios' %}">Cancelar</a>
+</form>
+{% endblock %}

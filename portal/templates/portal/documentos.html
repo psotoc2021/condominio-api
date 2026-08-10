@@ -1,0 +1,38 @@
+{% extends "portal/base.html" %}
+
+{% block content %}
+<h2>Documentos del condominio</h2>
+
+<a class="boton" href="{% url 'documento_crear' %}">Nuevo documento</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Tipo</th>
+            <th>Descripción</th>
+            <th>Fecha</th>
+            <th>Archivo</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for documento in documentos %}
+        <tr>
+            <td>{{ documento.titulo }}</td>
+            <td>{{ documento.get_tipo_display }}</td>
+            <td>{{ documento.descripcion }}</td>
+            <td>{{ documento.fecha_publicacion|date:"d/m/Y H:i" }}</td>
+            <td>
+                <a href="{{ documento.archivo.url }}" target="_blank">
+                    Ver documento
+                </a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="5">No existen documentos publicados.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

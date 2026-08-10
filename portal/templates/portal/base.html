@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Condominio</title>
+    <link rel="stylesheet" href="{% static 'portal/css/estilos.css' %}">
+</head>
+<body>
+
+<header>
+    <div class="contenedor">
+        <h1>Portal de Administración de Condominio</h1>
+
+        {% if user.is_authenticated %}
+        <nav>
+            <a href="{% url 'inicio' %}">Inicio</a>
+            <a href="{% url 'usuarios' %}">Usuarios</a>
+            <a href="{% url 'documentos' %}">Documentos</a>
+
+            <form method="post" action="{% url 'logout' %}" class="logout-form">
+                {% csrf_token %}
+                <button type="submit">Cerrar sesión</button>
+            </form>
+        </nav>
+        {% endif %}
+    </div>
+</header>
+
+<main class="contenedor">
+    {% block content %}
+    {% endblock %}
+</main>
+
+<footer>
+    <p>Portal de Administración de Condominio</p>
+</footer>
+
+</body>
+</html>
