@@ -48,3 +48,22 @@ Aplicación web desarrollada con Django y Django REST Framework para la administ
 
 El proyecto será utilizado para implementar un flujo DevOps que incorporará control de versiones, integración continua, contenedores y despliegue en AWS.
 
+## Pruebas automatizadas
+
+El proyecto utiliza pytest y pytest-django para validar automáticamente sus principales funcionalidades.
+
+Las pruebas implementadas verifican:
+
+- Estado operativo del servicio mediante `/api/health/`.
+- Versión de la aplicación mediante `/api/version/`.
+- Consulta de usuarios mediante GET.
+- Creación de usuarios mediante POST.
+- Modificación de usuarios mediante PATCH.
+- Eliminación de usuarios mediante DELETE.
+- Restricción de acceso al portal para usuarios no autenticados.
+
+Las pruebas pueden ejecutarse mediante:
+
+    pytest -v
+
+La ejecución validada del proyecto obtuvo un resultado de 7 pruebas aprobadas y 0 pruebas fallidas.
