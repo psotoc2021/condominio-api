@@ -67,3 +67,17 @@ Las pruebas pueden ejecutarse mediante:
     pytest -v
 
 La ejecución validada del proyecto obtuvo un resultado de 7 pruebas aprobadas y 0 pruebas fallidas.
+
+## Despliegue
+
+La aplicación será desplegada mediante un flujo de Integración y Entrega Continua.
+
+El proceso contempla:
+
+- Control de versiones mediante Git y GitHub.
+- Integración Continua mediante GitHub Actions.
+- Construcción de una imagen Docker.
+- Publicación de la imagen en Amazon ECR.
+- Despliegue de la aplicación en AWS.
+- Verificación mediante los endpoints `/api/health/` y `/api/version/`.
+- Monitoreo mediante Amazon CloudWatch.
