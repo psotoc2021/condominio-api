@@ -14,7 +14,7 @@
   "containerDefinitions": [
     {
       "name": "condominio-api",
-      "image": "946033678788.dkr.ecr.us-east-1.amazonaws.com/condominio-api:1.0",
+      "image": "946033678788.dkr.ecr.us-east-1.amazonaws.com/condominio-api:1.1",
       "essential": true,
       "portMappings": [
         {
