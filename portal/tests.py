@@ -31,7 +31,7 @@ def test_health(client):
 def test_version(client):
     response = client.get(reverse("version"))
     assert response.status_code == 200
-    assert response.json()["version"] == "1.0.0"
+    assert response.json()["version"] == "1.1.0"
 
 
 @pytest.mark.django_db
