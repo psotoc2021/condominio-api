@@ -115,6 +115,6 @@ def health(request):
 
 def version(request):
     return JsonResponse({
-        "version": "1.0.0",
+        "version": "1.1.0",
         "service": "condominio-api",
     })
